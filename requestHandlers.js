@@ -1,20 +1,18 @@
 'use strict';
 
+const exec = require('child_process').exec;
+
 function start(){
   console.log('Request handler \'start\' was called.');
-  
-  function sleep(secs) {
-    let startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + (secs + 10000) );
-  }
+  let content = 'empty';
 
-  sleep(10);
-  return 'Hello Start';
+  exec('ls -lah', (err, stdout, stderr) =>{
+    content = stdout;
+  });
+  
+  return content;
 
 }
-
-
-
 
 function upload(){
   console.log('Request handler \'upload\' was called.');
