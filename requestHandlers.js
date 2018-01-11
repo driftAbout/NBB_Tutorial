@@ -1,7 +1,7 @@
 'use strict';
 
 
-function start(res){
+function start(res, postData){
   console.log('Request handler \'start\' was called.');
   
   const body = `<!DOCTYPE html>
@@ -24,9 +24,9 @@ function start(res){
 
 }
 
-function upload(res){
+function upload(res, postData){
   console.log('Request handler \'upload\' was called.');
-  response_content.call(res, ['text/plain', 'Hello Upload']);
+  response_content.call(res, ['text/plain', `You've sent ${postData}`]);
 }
 
 function response_content (args){
