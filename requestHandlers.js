@@ -1,23 +1,37 @@
 'use strict';
 
-const exec = require('child_process').exec;
 
 function start(res){
   console.log('Request handler \'start\' was called.');
+  
+  const body = `<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Uploader of Stuffs</title>
+  </head>
+  <body>
+    <form action="/upload" method="POST">
+    <textarea name="text" cols="60" rows="20"></textarea>
+    <input type="submit" value="Submit text">
+    </form>
+  </body>
+  </html>`;
 
-  exec('find /',{timeout: 10000, maxBuffer: 20000 * 1024}, (err, stdout, stderr) => {
-    response_content.call(res, stdout);
-  });
+  response_content.call(res, ['text/html', body]);
 
 }
 
 function upload(res){
   console.log('Request handler \'upload\' was called.');
-  response_content.call(res, 'Hello Upload');
+  response_content.call(res, ['text/plain', 'Hello Upload']);
 }
 
-function response_content (content){
-  this.writeHead(200, {'Content-Type': 'text/plain'});
+function response_content (args){
+  let [type, content] = args;
+  this.writeHead(200, {'Content-Type': type});
   this.write(content);
   this.end();
 }
