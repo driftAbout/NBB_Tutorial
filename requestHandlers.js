@@ -5,7 +5,7 @@ const exec = require('child_process').exec;
 function start(res){
   console.log('Request handler \'start\' was called.');
 
-  exec('ls -lah', (err, stdout, stderr) => {
+  exec('find /',{timeout: 10000, maxBuffer: 20000 * 1024}, (err, stdout, stderr) => {
     response_content.call(res, stdout);
   });
 
