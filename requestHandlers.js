@@ -1,5 +1,6 @@
 'use strict';
 
+const querystring = require('querystring');
 
 function start(res, postData){
   console.log('Request handler \'start\' was called.');
@@ -26,7 +27,7 @@ function start(res, postData){
 
 function upload(res, postData){
   console.log('Request handler \'upload\' was called.');
-  response_content.call(res, ['text/plain', `You've sent ${postData}`]);
+  response_content.call(res, ['text/plain', `You've sent ${querystring.parse(postData).text}`]);
 }
 
 function response_content (args){
