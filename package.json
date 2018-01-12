@@ -1,0 +1,33 @@
+{
+  "name": "nodebeginner",
+  "version": "1.0.0",
+  "description": "This repo is for the code I wrote following the tutorial outlined in the Node Beginner Book by Manuel Kiessling.",
+  "main": "index.js",
+  "dependencies": {
+    "formidable": "^1.1.1",
+    "nodemon": "^1.14.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/driftAbout/NBB_Tutorial.git"
+  },
+  "keywords": [
+    "node",
+    "async",
+    "file",
+    "upload",
+    "http",
+    "server"
+  ],
+  "author": "Kevin Miller/Manuel Kiessling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/driftAbout/NBB_Tutorial/issues"
+  },
+  "homepage": "https://github.com/driftAbout/NBB_Tutorial#readme"
+}
