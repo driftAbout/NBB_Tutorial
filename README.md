@@ -1,6 +1,6 @@
 # Node Beginner Book Tutorial
 
-This repo is for the code I wrote following the tutorialin the Node Beginner Book by Manuel Kiessling.  
+This repo is for the code I wrote following the tutorial outlined in the Node Beginner Book by Manuel Kiessling.  
 
   http://manuel.kiessling.net/
 
